@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Telephone Game</title>
+  </head>
+  <body>
+    <h1>Telephone Game</h1>
+    <p>Current player: {{ current_player }}</p>
+    {% if error %}
+      <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if prompt %}
+      <h3>Prompt:</h3>
+      <p>{{ prompt }}</p>
+    {% endif %}
+    {% if image_url %}
+      <h3>Image:</h3>
+      <img src="{{ image_url }}" alt="Generated image">
+    {% endif %}
+    {% if winner %}
+      <h2>Winner: {{ winner }}</h2>
+    {% else %}
+      {% if current_player == player_index %}
+        <form action="/submit" method="POST">
+          <label for="prompt">Enter your prompt:</label>
+          <input type="text" id="prompt" name="prompt" required>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      {% else %}
+        <p>Waiting for {{ player_name }} to submit a prompt...</p>
+      {% endif %}
+    {% endif %}
+  </body>
+</html>

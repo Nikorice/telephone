@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+</head>
+<body>
+	<h1>Results</h1>
+	{% for image in images %}
+		<img src="{{ url_for('static', filename='images/' + image) }}">
+	{% endfor %}
+	<p><a href="{{ url_for('index') }}">Play Again</a></p>
+</body>
+</html>

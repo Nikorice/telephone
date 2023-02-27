@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Telephone Game</title>
+  </head>
+  <body>
+    <h1>Telephone Game Results</h1>
+    <ul>
+      {% for image in images %}
+        <li>
+          <h3>Player: {{ image['player'] }}</h3>
+          <p>Prompt: {{ image['prompt'] }}</p>
+          <img src="{{ image['image'] }}" alt="Generated image">
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
