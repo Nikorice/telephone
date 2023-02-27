@@ -1,7 +1,7 @@
 import openai
 import requests
 
-openai.api_key = "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"
+openai.api_key = ""
 
 def generate_image(prompt):
     # Generate an image from the DALL-E model using OpenAI's API
